@@ -1,0 +1,14 @@
+﻿dotnet tool install --global dotnet-ef --> cmd command 
+1- Download Microsoft.EntityFrameworkCore.SqlServer package to project.
+
+---> With Package Manager Console(PMC)
+
+2- Download Microsoft.EntityFrameworkCore.Tools package to project.
+3- Open the Package Manager Console
+4- Write : Scaffold-DbContext 'Server=.; Database=Northwind; Integrated Security=True' Microsoft.EntityFrameworkCore.SqlServer
+
+---> With dotnet CLI
+2- Download Microsoft.EntityFrameworkCore.Design package to project.
+3- Open the Developer PowerShell
+4- Write: cd DatabaseFirst and;
+		dotnet ef dbcontext scaffold 'Server=.; Database=Northwind; Integrated Security=True' Microsoft.EntityFrameworkCore.SqlServer
