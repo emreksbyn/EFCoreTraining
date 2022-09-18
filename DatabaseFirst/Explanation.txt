@@ -1,14 +1,57 @@
 ﻿dotnet tool install --global dotnet-ef --> cmd command 
 1- Download Microsoft.EntityFrameworkCore.SqlServer package to project.
 
+
+
+
 ---> With Package Manager Console(PMC)
 
 2- Download Microsoft.EntityFrameworkCore.Tools package to project.
 3- Open the Package Manager Console
 4- Write : Scaffold-DbContext 'Server=.; Database=Northwind; Integrated Security=True' Microsoft.EntityFrameworkCore.SqlServer
 
+* If I want only Product and Orders tables;
+5- Scaffold-DbContext 'Server=.; Database=Northwind; Integrated Security=True' Microsoft.EntityFrameworkCore.SqlServer -Tables Orders, Products
+
+* If I want different DbContext name;
+6- Scaffold-DbContext 'Server=.; Database=Northwind; Integrated Security=True' Microsoft.EntityFrameworkCore.SqlServer -Tables Orders, Products -Context EmreContext
+
+* If I want different Context and Entities path;
+7- Scaffold-DbContext 'Server=.; Database=Northwind; Integrated Security=True' Microsoft.EntityFrameworkCore.SqlServer -Tables Orders, Products -ContextDir Contexts -OutputDir Entities
+
+* If I want different Namespace for entities and context classes;
+8- Scaffold-DbContext 'Server=.; Database=Northwind; Integrated Security=True' Microsoft.EntityFrameworkCore.SqlServer -Tables Orders, Products -ContextDir Contexts -OutputDir Entities -Namespace Example.Entities -ContextNamespace Example.Contexts
+
+* If database changed and I already have database entities and context classes in our project, we use "FORCE"
+9- Scaffold-DbContext 'Server=.; Database=Northwind; Integrated Security=True' Microsoft.EntityFrameworkCore.SqlServer -Tables Orders, Products -ContextDir Contexts -OutputDir Entities -Force
+
+
+*****************************************************************************************************************
+
 ---> With dotnet CLI
 2- Download Microsoft.EntityFrameworkCore.Design package to project.
 3- Open the Developer PowerShell
 4- Write: cd DatabaseFirst and;
 		dotnet ef dbcontext scaffold 'Server=.; Database=Northwind; Integrated Security=True' Microsoft.EntityFrameworkCore.SqlServer
+* If I want only Product and Orders tables;
+5- dotnet ef dbcontext scaffold 'Server=.; Database=Northwind; Integrated Security=True' Microsoft.EntityFrameworkCore.SqlServer --table Orders --table Products
+
+* If I want different DbContext name;
+6- dotnet ef dbcontext scaffold 'Server=.; Database=Northwind; Integrated Security=True' Microsoft.EntityFrameworkCore.SqlServer --table Orders --table Products --context emrecontext
+ 
+* If I want different Context and Entities path;
+7- dotnet ef dbcontext scaffold 'Server=.; Database=Northwind; Integrated Security=True' Microsoft.EntityFrameworkCore.SqlServer --table Orders --table Products --context-dir Contexts --output-dir Entities
+
+* If I want different Namespace for entities and context classes;
+8- dotnet ef dbcontext scaffold 'Server=.; Database=Northwind; Integrated Security=True' Microsoft.EntityFrameworkCore.SqlServer --table Orders --table Products --context-dir Contexts --output-dir Entities --namespace Example.Entities --context-namespace Example.Contexts
+
+* If database changed and I already have database entities and context classes in our project, we use "FORCE"
+9- dotnet ef dbcontext scaffold 'Server=.; Database=Northwind; Integrated Security=True' Microsoft.EntityFrameworkCore.SqlServer --table Orders --table Products --context-dir Contexts --output-dir Entities --force
+
+****************************************************************************************************************
+
+!!!
+* If I changed Orders table in Database, but I do not want to change Order class in my project;
+--> I generate Partials Folder in Entities Folder and generate partials Order class in Partials Folder. 
+		!!! BUT ATTENTION !!!
+Order class in Entities and Order class in Partials MUST HAVE same namespace !!
