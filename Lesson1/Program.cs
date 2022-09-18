@@ -3,7 +3,7 @@ using System.Data.SqlClient;
 
 #region SQL Queries in Code Without ORM
 await using SqlConnection connection = new SqlConnection(
-    $"Server=(localdb)\\MSSQLLocalDB;Database=Northwind; Integrated Security=True");
+    $"Server=.;Database=Northwind; Integrated Security=True");
 await connection.OpenAsync();
 
 SqlCommand command = new("Select * from Employees", connection);
