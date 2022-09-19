@@ -12,8 +12,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.9" />
-		<PackageReference Include="System.Data.SqlClient" Version="4.8.3" />
+	  <ProjectReference Include="..\Lesson1\Lesson1.csproj" />
 	</ItemGroup>
 
 
