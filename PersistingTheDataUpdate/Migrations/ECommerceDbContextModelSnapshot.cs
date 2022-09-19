@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace PersistingTheData.Migrations
+namespace PersistingTheDataUpdate.Migrations
 {
     [DbContext(typeof(ECommerceDbContext))]
     partial class ECommerceDbContextModelSnapshot : ModelSnapshot

@@ -7,10 +7,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace PersistingTheData.Migrations
+namespace PersistingTheDataUpdate.Migrations
 {
     [DbContext(typeof(ECommerceDbContext))]
-    [Migration("20220919093313_init1")]
+    [Migration("20220919102745_init1")]
     partial class init1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

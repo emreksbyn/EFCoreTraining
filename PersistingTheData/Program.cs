@@ -32,7 +32,7 @@ Console.WriteLine();
 
 #endregion
 
-#region How Does EFCore Know When Data Needs To Be Added?
+#region How Does EFCore Know When Data Needs To Be Add?
 
 //ECommerceDbContext context = new();
 //Product product = new()
