@@ -1,0 +1,53 @@
+﻿When I want to migration;
+I download Microsoft.EntityFrameworkCore.Tools
+
+--- Package Manager Console
+
+1- Choose Default project --> CodeFirst
+2- add-migration [Migration Name] --> add-migration init1
+
+* If I want different Migration path
+3- add-migration init1 -OutputDir Migs
+
+* If I want delete the Migration
+4- Remove-Migration
+
+* If I want migration list
+5- get-migration
+
+6- To Generate the database : update-database
+
+* If I want to go back init3
+7- update-database init3
+
+
+****************************************************************************************
+
+
+
+
+--- DotNet CLI (Developer PowerShell)
+
+1- cd CodeFirst 
+2- dotnet ef migrations add init1
+
+* If I want different Migration path
+3- dotnet ef migrations add init1 --output-dir Migs
+
+* If I want delete the Migration
+4- dotnet ef migrations remove
+
+* If I want migration list
+5- dotnet ef migrations list
+
+6- To Generate the database : dotnet ef database update
+
+* If I want to go back init3
+7- dotnet ef database update init3
+
+**************************************************************************************
+
+// If I want to migrate without Microsoft.EntityFrameworkCore.Tools
+
+ECommerceDbContext context = new();
+await context.Database.MigrateAsync();
