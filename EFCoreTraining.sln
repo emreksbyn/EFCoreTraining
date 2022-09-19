@@ -9,13 +9,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ORM_SQL_Isolation", "ORM_SQ
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DatabaseFirst", "DatabaseFirst\DatabaseFirst.csproj", "{E1F865FB-5850-489B-9E89-08028FFDBF55}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeFirst", "CodeFirst\CodeFirst.csproj", "{2D6CCFD5-2055-445D-BF00-286BD3964EE9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeFirst", "CodeFirst\CodeFirst.csproj", "{2D6CCFD5-2055-445D-BF00-286BD3964EE9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lesson9", "Lesson9\Lesson9.csproj", "{0DF845B5-C61C-4FB9-876A-8539443E456B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lesson9", "Lesson9\Lesson9.csproj", "{0DF845B5-C61C-4FB9-876A-8539443E456B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersistingTheData", "PersistingTheData\PersistingTheData.csproj", "{4CAD8540-E57F-481F-8DA4-2E63FB2EABEE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PersistingTheData", "PersistingTheData\PersistingTheData.csproj", "{4CAD8540-E57F-481F-8DA4-2E63FB2EABEE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersistingTheDataUpdate", "PersistingTheDataUpdate\PersistingTheDataUpdate.csproj", "{0F3B1530-0B57-471C-9464-1877E7FA8E81}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PersistingTheDataUpdate", "PersistingTheDataUpdate\PersistingTheDataUpdate.csproj", "{0F3B1530-0B57-471C-9464-1877E7FA8E81}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersistingTheDataDelete", "PersistingTheDataDelete\PersistingTheDataDelete.csproj", "{546F1448-312B-48C5-9EAF-126CF9896C11}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{0F3B1530-0B57-471C-9464-1877E7FA8E81}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0F3B1530-0B57-471C-9464-1877E7FA8E81}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0F3B1530-0B57-471C-9464-1877E7FA8E81}.Release|Any CPU.Build.0 = Release|Any CPU
+		{546F1448-312B-48C5-9EAF-126CF9896C11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{546F1448-312B-48C5-9EAF-126CF9896C11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{546F1448-312B-48C5-9EAF-126CF9896C11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{546F1448-312B-48C5-9EAF-126CF9896C11}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
