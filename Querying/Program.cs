@@ -188,7 +188,6 @@ ECommerceDbContext context = new();
 
 #endregion
 
-
 // Sorguda tek bir veri gelsin istiyorsak First yada FirstOrDefault kullanilabilir.
 // Birden fazla veri geldiginde hata vermesini istemiyorsak kullanislidir.
 #region First
@@ -221,7 +220,6 @@ ECommerceDbContext context = new();
 //var product2 = context.Products.FirstOrDefault(x => x.Id > 67);
 
 #endregion
-
 
 #region Find
 
@@ -259,15 +257,81 @@ ECommerceDbContext context = new();
 
 #region Diger Sorgulama Fonksiyonlari
 
+#region Count
 
+// Sorgunun execute edilmesiyle kac satir verinin elde edilecegini sayisal (int) olarak bize bildirir.
+// Kotu ornek. Cunku veritabanindan butun veriyi getirir ve bellekteyken count hesaplanir.
+//var productsCount = context.Products.ToList().Count();
 
+// Iyi ornek. veritabanina sorgu count ile cekilir. daha performansli olur
+//var count = context.Products.Count();
 
+// Bu sekilde Count metodunun icinde Where sorgusu da gonderebiliriz.
+//var count = context.Products.Count(x => x.Id < 6);
 
+#endregion
 
+#region LongCount
+// Sorgunun execute edilmesiyle kac satir verinin elde edilecegini sayisal (long) olarak bize bildirir.
+//var count = context.Products.LongCount();
+#endregion
 
+#region Any
 
+// Sorgudan sonra verinin gelip gelmedigini boolean tipinde doner.
+//var isProductExists = context.Products.Any(x => x.Id > 11);
+//var isProductExists = context.Products.Any();
 
+#endregion
 
+#region Max
+// Kolondaki max deger
+//var productMaxPrice = context.Products.Max(x => x.Price);
+#endregion
+
+#region Min
+// Kolondaki min deger
+//var productMinPrice = context.Products.Min(x => x.Price);
+#endregion
+
+#region Distinct
+// Sorguda tekrar eden kayitlar varsa bunlardan sadece birini getirir.
+//var products = context.Products.Distinct().ToList();
+#endregion
+
+#region All
+// Bir sorgudan gelen verilerin HEPSI verilen sarta uyuyorsa true, uymuyorsa false doner.
+//var isTrue = context.Products.All(x => x.Price < 67);
+#endregion
+
+#region Sum
+// Toplam
+//var totalPrice = context.Products.Sum(x => x.Price);
+#endregion
+
+#region Average
+// Ortalama
+//var averagePrice = context.Products.Average(x => x.Price);
+#endregion
+
+#region Contains
+// SQL deki Like '%...%' sorgusunu olusturur.
+// Where(x => x.Something.Contains("something")) olarak kullanilir.
+//var products = context.Products.Where(x => x.ProductName.Contains("a")).ToList();
+
+// Asagidaki Contains Like sorgusu olusturmaz !! Zaten icine bir product nesnesi istemektedir.
+//var products = context.Products.Contains();
+#endregion
+
+#region StarsWith
+// SQL deki Like '...%' sorgusunu olusturur. Where ile beraber kullanilir.
+//var products = context.Products.Where(x => x.ProductName.StartsWith("a")).ToList();
+#endregion
+
+#region EndWith
+// SQL deki Like '%...' sorgusunu olusturur. Where ile beraber kullanilir.
+//var products = context.Products.Where(x => x.ProductName.EndsWith("a")).ToList();
+#endregion
 
 #endregion
 
