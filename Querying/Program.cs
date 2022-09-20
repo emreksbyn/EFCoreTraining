@@ -105,10 +105,50 @@ ECommerceDbContext context = new();
 
 #region Cogul Veri Getiren Sorgulama Fonksiyonlari
 
+#region ToListAsync()
 
+// Uretilen sorguyu execute etmemizi saglar.
+//var products = await context.Products.ToListAsync();
 
+//var products = await (from product in context.Products
+//select product).ToListAsync();
 
+#endregion
 
+#region Where
+
+//var products = context.Products.Where(x=>x.Id > 0).ToList();
+
+//var products = (from product in context.Products
+//                where product.Id > 0
+//                select product).ToList();
+
+#endregion
+
+#region OrderBy
+
+// Sıralama yaptirir. Default olarak Ascending siralar.
+//var products = context.Products.Where(x => x.Id > 0 && x.ProductName.StartsWith("a")).OrderBy(x => x.Id).ToList();
+
+//var products = context.Products.Where(x => x.Id > 0 && x.ProductName.StartsWith("a")).OrderByDescending(x => x.Id).ToList();
+
+//var products = (from product in context.Products
+//                where product.Id > 0 && product.ProductName.StartsWith("a")
+//                orderby product.Id ascending
+//                orderby product.ProductName descending
+//                select product).ToList();
+
+#endregion
+
+#region ThenBy
+
+// OrderBy uzerinden yapilan siralama islemini farkli kolonlarada uygulamamizi saglar. Default Ascending
+
+//var products = context.Products.Where(x => x.Id > 0 && x.ProductName.StartsWith("a")).OrderBy(x => x.Id).ThenBy(x => x.ProductName).ThenBy(x => x.Price).ToList();
+
+//var products = context.Products.Where(x => x.Id > 0 && x.ProductName.StartsWith("a")).OrderByDescending(x => x.Id).ThenByDescending(x => x.ProductName).ThenByDescending(x => x.Price).ToList();
+
+#endregion
 
 #endregion
 
