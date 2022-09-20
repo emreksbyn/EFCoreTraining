@@ -155,16 +155,92 @@ ECommerceDbContext context = new();
 
 #region Tekil Veri Getiren Sorgulama Fonksiyonlari
 
+// Yapilan sorguda sadece TEK bir verinin gelmesi amaclaniyorsa Single yada SingleOrDefault fonksiyonalari kullanilir.
+// Birden fazla veri geldiginde hata versin uyarsin istiyorsak kullanislidir.
+#region Single
 
+// Egerki sorgu neticesinde birden fazla veri geliyorsa yada hic gelmiyorsa exception firlatir !.
 
+// Tek veri geldi exception yok
+//var product = context.Products.Single(x => x.Id == 1);
 
+// Hic veri gelmedi excepiton firlatti --> System.InvalidOperationException: 'Sequence contains no elements'
+//var product = context.Products.Single(x => x.Id == 67);
 
-
-
-
+// Birden fazla veri geldi exception firlatti --> System.InvalidOperationException: 'Sequence contains more than one element'
+//var product = context.Products.Single(x => x.Id > 1);
 
 #endregion
 
+#region SingleOrDefault
+
+// Default u null' dir.
+// Egerki sorgu neticesinde birden fazla veri geliyorsa exception firlatir, hic veri gelmiyorsa null doner.
+
+// Tek veri geldi exception yok
+//var product = context.Products.SingleOrDefault(x => x.Id == 1);
+
+// Hic gelmedi default olarak product null dondu.
+//var product = context.Products.SingleOrDefault(x => x.Id == 67);
+
+// Birden fazla veri geldi exception firlatti --> System.InvalidOperationException: 'Sequence contains more than one element'
+//var product = context.Products.SingleOrDefault(x => x.Id > 1);
+
+#endregion
+
+
+// Sorguda tek bir veri gelsin istiyorsak First yada FirstOrDefault kullanilabilir.
+// Birden fazla veri geldiginde hata vermesini istemiyorsak kullanislidir.
+#region First
+
+// Sorgu neticesinde elde edilen verilerden ilkini getirir. Veri yoksa hata firlatir.
+
+// product da 1 tane urun vardir hata firlatmaz
+//var product = context.Products.First(x => x.Id == 1);
+
+// Products da id si 1 den buyuk baska productlarda olmasina ragmen bunlarin ilki product dadir. Hata firlatmaz
+//var product = context.Products.First(x => x.Id > 1);
+
+// Hic kayit gelmediginde exception firlatir --> System.InvalidOperationException: 'Sequence contains no elements'
+//var product = context.Products.First(x => x.Id > 67);
+
+#endregion
+
+// Hata firlatmaz
+#region FirstOrDefault
+
+// Sorgu neticesinde elde edilen verilerden ilkini getirir. Veri yoksa null degerini doner
+
+// product da 1 tane urun vardir hata firlatmaz
+//var product = context.Products.FirstOrDefault(x => x.Id == 1);
+
+// Products da id si 1 den buyuk baska productlarda olmasina ragmen bunlarin ilki product dadir. Hata firlatmaz
+//var product1 = context.Products.FirstOrDefault(x => x.Id > 1);
+
+// Hic kayit gelmediginde product2 nesnesi null degerinin alir
+//var product2 = context.Products.FirstOrDefault(x => x.Id > 67);
+
+#endregion
+
+#region Find
+
+#endregion
+
+#region Find ile --> Single, SingleOrDefault, First, FirstOrDefault Karsilastirmasi
+
+#endregion
+
+#region Last
+
+#endregion
+
+#region LastOrDefault
+
+#endregion
+
+#endregion
+
+Console.WriteLine();
 
 #region Diger Sorgulama Fonksiyonlari
 
@@ -225,10 +301,16 @@ public class ECommerceDbContext : DbContext
 {
     public DbSet<Product> Products { get; set; }
     public DbSet<Piece> Pieces { get; set; }
+    public DbSet<ProductPiece> ProductPieces { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         optionsBuilder.UseSqlServer("Server=.; Database=ECommerceDb; Integrated Security=True");
+    }
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.Entity<ProductPiece>().HasKey(pc => new { pc.ProductId, pc.PieceId });
     }
 }
 
@@ -243,4 +325,13 @@ public class Piece
 {
     public int Id { get; set; }
     public string PieceName { get; set; }
+}
+
+public class ProductPiece
+{
+    public int ProductId { get; set; }
+    public int PieceId { get; set; }
+
+    public Product Product { get; set; }
+    public Piece Piece { get; set; }
 }
