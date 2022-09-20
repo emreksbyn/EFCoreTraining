@@ -23,7 +23,6 @@ ECommerceDbContext context = new();
 
 #endregion
 
-
 #region Sorguyu Execute Etmek Icin Ne Yapmaliyiz
 
 #region ToListAsync()
@@ -78,7 +77,6 @@ ECommerceDbContext context = new();
 
 #endregion
 
-
 #region IQueryable ve IEnumerable Nedir? Basit Olarak
 
 #region IQueryable
@@ -101,7 +99,6 @@ ECommerceDbContext context = new();
 #endregion
 
 #endregion
-
 
 #region Cogul Veri Getiren Sorgulama Fonksiyonlari
 
@@ -151,7 +148,6 @@ ECommerceDbContext context = new();
 #endregion
 
 #endregion
-
 
 #region Tekil Veri Getiren Sorgulama Fonksiyonlari
 
@@ -254,7 +250,6 @@ ECommerceDbContext context = new();
 
 #endregion
 
-
 #region Diger Sorgulama Fonksiyonlari
 
 #region Count
@@ -335,20 +330,74 @@ ECommerceDbContext context = new();
 
 #endregion
 
-
 #region Sorgu Sonucu Donusum Fonksiyonlari
+// Bu fonksiyonlar ile sorgu sonucunda elde edilen verileri istegimiz dogrultusunda farkli turlerde projecsiyon edebiliyoruz.
+#region ToDictioanary
+
+// Sorgu sonucu gelecek veriyi Dictionary olarak elde ederiz, karsilariz.
+//var products = context.Products.ToDictionary(x => x.ProductName, x => x.Price);
+
+// ToList ile ayni amaca hizmet eder, yani sorguyu execute eder.
+// ToList : List<TEntity> ' ye donusturur.
+// ToDictionary : Dictionary<TKey, TValue> ' ya donusturur.
+#endregion
+
+#region ToArray
+
+// Sorgu sonucu gelecek veriyi Array (dizi) olarak elde ederiz, karsilariz.
+//var products = context.Products.ToArray();
+
+// ToList ile ayni amaca hizmet eder, yani sorguyu execute eder.
+// ToList : List<TEntity> ' ye donusturur.
+// ToArray : TEntity[] 
+#endregion
+
+#region Select
+
+// Islevsel olarak birden fazla davranisi vardir.
+
+// 1- Generate edilecek sorgunun cekilecek kolonlarini ayarlamaya yarar.
+//var products = await context.Products.Select(x => new Product
+//{
+//    Id = x.Id,
+//    ProductName = x.ProductName,
+//}).ToListAsync();
+
+// 2- Gelen verileri farkli turlerde karsilamamizi saglar --> <T>, anonymous type
+
+// anonymous type
+//var products = await context.Products.Select(x => new 
+//{
+//    Id = x.Id,
+//    ProductName = x.ProductName,
+//}).ToListAsync();
 
 
-
-
-
-
-
-
-
+// Farklı bir nesnede tutma (<T>) 
+//var products = await context.Products.Select(x => new ProductDetailDto
+//{
+//    Id = x.Id,
+//    Price = x.Price,
+//}).ToListAsync();
 
 #endregion
 
+#region SelectMany
+
+// Select ile ayni amaca hizmet eder. Lakin, iliskisel tablolar neticesinde gelen koleksiyonel (ICollection, List..) verileri de tekillestirip projeksiyon etmemizi saglar.
+
+//var products = await context.Products
+//    .Include(product => product.Pieces)
+//    .SelectMany(product => product.Pieces, (product, piece) => new
+//    {
+//        product.Id,
+//        product.Price,
+//        piece.PieceName
+//    }).ToListAsync();
+
+#endregion
+
+#endregion
 
 #region GroupBy()
 
@@ -361,7 +410,6 @@ ECommerceDbContext context = new();
 
 
 #endregion
-
 
 #region Foreach()
 
@@ -413,4 +461,10 @@ public class ProductPiece
 
     public Product Product { get; set; }
     public Piece Piece { get; set; }
+}
+
+public class ProductDetailDto
+{
+    public int Id { get; set; }
+    public float Price { get; set; }
 }
