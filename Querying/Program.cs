@@ -222,25 +222,40 @@ ECommerceDbContext context = new();
 
 #endregion
 
+
 #region Find
 
-#endregion
+// Find fonk. primary key kolonuna hizli bir sekilde sorgu yapmamizi saglar.
+// Sadece primary key alanlarini sorulayabilir.
+// Kayit bulunamazsa null doner.
+// Once context icerisini kontrol eder, kaydi bulamazsa veritabanina gonderir.
 
-#region Find ile --> Single, SingleOrDefault, First, FirstOrDefault Karsilastirmasi
+// PRIMARY KEY DURUMU
+//var product = context.Products.Find(1);
+
+// COMPOSITE PRIMARY KEY DURUMU
+//var product = context.ProductPieces.Find(2,2);
 
 #endregion
 
 #region Last
 
+// First fonksiyonunun tam tersi davranis gosterir. OrderBy ile kullanilmasi zorunludur.
+// 10 tane urun varsa 10.urun gelir.
+// Hic veri gelmiyorsa hata firlatir.
+//var product = context.Products.OrderBy(x => x.Id).Last(x => x.Id > 3);
+
 #endregion
 
 #region LastOrDefault
 
-#endregion
+// FirstOrDefault fonk.nun tam tersi davranis gosterir.
+// Hic veri gelmiyorsa null doner.
 
 #endregion
 
-Console.WriteLine();
+#endregion
+
 
 #region Diger Sorgulama Fonksiyonlari
 
