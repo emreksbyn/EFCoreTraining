@@ -1,8 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿#region 
+using Microsoft.EntityFrameworkCore;
 
 Console.WriteLine();
 
 ECommerceDbContext context = new();
+
+#endregion
 
 #region En Temel Basit Sorgulama
 
@@ -401,29 +404,55 @@ ECommerceDbContext context = new();
 
 #region GroupBy()
 
+// Method Syntax
+
+//var datas = context.Products.GroupBy(x => x.Price).Select(group => new
+//{
+//    Price = group.Key,
+//    PriceCount = group.Count()
+//}).ToList();
 
 
+// Query Syntax
 
+//var datas = (from product in context.Products
+//             group product by product.Price
+//            into @group
+//             select new
+//             {
+//                 Price = @group.Key,
+//                 Count = @group.Count()
+//             }).ToList();
 
+#endregion
 
+#region ForEach()
 
+// Bir sorgulama fonksiyonu degildir.
+
+//var datas = (from product in context.Products
+//             group product by product.Price
+//            into @group
+//             select new
+//             {
+//                 Price = @group.Key,
+//                 Count = @group.Count()
+//             }).ToList();
+
+//foreach (var data in datas)
+//{
+//    Console.WriteLine(data.Price + " " + data.Count);
+//}
+
+//datas.ForEach(x =>
+//{
+//    Console.WriteLine(x.Price + " " + x.Count);
+//});
 
 
 #endregion
 
-#region Foreach()
-
-
-
-
-
-
-
-
-
-
-#endregion
-
+#region Context and Entity Classes
 public class ECommerceDbContext : DbContext
 {
     public DbSet<Product> Products { get; set; }
@@ -468,3 +497,4 @@ public class ProductDetailDto
     public int Id { get; set; }
     public float Price { get; set; }
 }
+#endregion
