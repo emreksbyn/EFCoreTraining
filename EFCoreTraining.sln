@@ -17,9 +17,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PersistingTheData", "Persis
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PersistingTheDataUpdate", "PersistingTheDataUpdate\PersistingTheDataUpdate.csproj", "{0F3B1530-0B57-471C-9464-1877E7FA8E81}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersistingTheDataDelete", "PersistingTheDataDelete\PersistingTheDataDelete.csproj", "{546F1448-312B-48C5-9EAF-126CF9896C11}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PersistingTheDataDelete", "PersistingTheDataDelete\PersistingTheDataDelete.csproj", "{546F1448-312B-48C5-9EAF-126CF9896C11}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Querying", "Querying\Querying.csproj", "{F5DA876D-5A76-4353-A433-91A20B8BF8C3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Querying", "Querying\Querying.csproj", "{F5DA876D-5A76-4353-A433-91A20B8BF8C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChangeTracker", "ChangeTracker\ChangeTracker.csproj", "{E0497D40-7193-4770-86E3-9A03689BB48A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +65,10 @@ Global
 		{F5DA876D-5A76-4353-A433-91A20B8BF8C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F5DA876D-5A76-4353-A433-91A20B8BF8C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F5DA876D-5A76-4353-A433-91A20B8BF8C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0497D40-7193-4770-86E3-9A03689BB48A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0497D40-7193-4770-86E3-9A03689BB48A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0497D40-7193-4770-86E3-9A03689BB48A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0497D40-7193-4770-86E3-9A03689BB48A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
