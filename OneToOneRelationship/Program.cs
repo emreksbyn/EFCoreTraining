@@ -34,6 +34,7 @@ Console.WriteLine();
 // Navigation Property ler tanimlanmalidir.
 // ForeignKey kolonunun ismi default conventions in disinda bir kolon olacaksa eger ForeignKey attribute ile bunu bildirebiliriz.
 // 1 e 1 iliskide ekstradan Foreign Key kolonuna ihtiyac olmayacagi icin dependent entity deki id kolonunu hem foreign key hemde primary key olarak kullanmayi tercih ediyoruz. Bu daha avantajlidir.
+
 //public class Employee
 //{
 //    public int Id { get; set; }
@@ -44,7 +45,7 @@ Console.WriteLine();
 
 //public class EmployeeAddress
 //{
-//    // Bir kolonu Primary ve Foreign Key olarak birlikte tanimlarsak : hem ekstradan EmployeeId kolonuna gerek kalmaz hemde bu EmployeeId kolonuna unique demek zorunda kalmayiz. PrimaryKey oldugu icin Unique olur, ForeignKey oldugu icinde iliskisel olur. One to One tablolarda bu yontem daha mantiklidir.
+//    // Bir kolonu Primary ve Foreign Key olarak birlikte tanimlarsak : hem ekstradan EmployeeId kolonuna gerek kalmaz hemde bu EmployeeId kolonuna unique demek zorunda kalmayiz. PrimaryKey oldugu icin Unique olur, ForeignKey oldugu icinde iliskisel olur. "One to One" tablolarda bu yontem daha mantiklidir.
 //    [Key, ForeignKey(nameof(Employee))]
 //    public int Id { get; set; }
 
