@@ -29,9 +29,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Relationships", "Relationsh
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OneToOneRelationship", "OneToOneRelationship\OneToOneRelationship.csproj", "{88AC6709-0CE0-4BAD-B1D4-0EF1E4E70EE7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OneToManyRelationship", "OneToManyRelationship\OneToManyRelationship.csproj", "{1F5E635D-A7D9-4408-A662-7078C8148DC3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OneToManyRelationship", "OneToManyRelationship\OneToManyRelationship.csproj", "{1F5E635D-A7D9-4408-A662-7078C8148DC3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManyToManyRelationship", "ManyToManyRelationship\ManyToManyRelationship.csproj", "{DF1883A1-E368-42F6-9F82-82D72C3D289D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ManyToManyRelationship", "ManyToManyRelationship\ManyToManyRelationship.csproj", "{DF1883A1-E368-42F6-9F82-82D72C3D289D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SavingRelatedData", "SavingRelatedData\SavingRelatedData.csproj", "{1CE90DA1-FFDC-4079-A38E-32594D3FD2B2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -99,6 +101,10 @@ Global
 		{DF1883A1-E368-42F6-9F82-82D72C3D289D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DF1883A1-E368-42F6-9F82-82D72C3D289D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DF1883A1-E368-42F6-9F82-82D72C3D289D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1CE90DA1-FFDC-4079-A38E-32594D3FD2B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CE90DA1-FFDC-4079-A38E-32594D3FD2B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CE90DA1-FFDC-4079-A38E-32594D3FD2B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CE90DA1-FFDC-4079-A38E-32594D3FD2B2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
