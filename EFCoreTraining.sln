@@ -35,7 +35,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ManyToManyRelationship", "M
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SavingRelatedData", "SavingRelatedData\SavingRelatedData.csproj", "{1CE90DA1-FFDC-4079-A38E-32594D3FD2B2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UpdatingRelatedData", "UpdatingRelatedData\UpdatingRelatedData.csproj", "{74A933BE-1A08-4116-90BE-C443F8366E75}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UpdatingRelatedData", "UpdatingRelatedData\UpdatingRelatedData.csproj", "{74A933BE-1A08-4116-90BE-C443F8366E75}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeletingRelatedData", "DeletingRelatedData\DeletingRelatedData.csproj", "{7E017677-462A-4DFD-9961-4EE0799831F4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -111,6 +113,10 @@ Global
 		{74A933BE-1A08-4116-90BE-C443F8366E75}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{74A933BE-1A08-4116-90BE-C443F8366E75}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{74A933BE-1A08-4116-90BE-C443F8366E75}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E017677-462A-4DFD-9961-4EE0799831F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E017677-462A-4DFD-9961-4EE0799831F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E017677-462A-4DFD-9961-4EE0799831F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E017677-462A-4DFD-9961-4EE0799831F4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
